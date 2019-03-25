@@ -42,6 +42,6 @@ public class StringUtils {
                 counter++;
             }
         }
-        return counter - 1;
+        return counter;
     }
 }
