@@ -13,10 +13,20 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
+        for (Object object : array) {
+            if (getNumberOfOccurrences((SomeType) object) % 2 != 0){
+                return (SomeType) object;
+            }
+        }
         return null;
     }
 
     public SomeType findEvenOccurringValue() {
+        for (Object object : array) {
+            if (getNumberOfOccurrences((SomeType) object) % 2 == 0){
+                return (SomeType) object;
+            }
+        }
         return null;
     }
 
