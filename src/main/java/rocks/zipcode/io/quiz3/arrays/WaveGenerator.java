@@ -10,7 +10,7 @@ public class WaveGenerator {
     public static String[] wave(String str) {
         List<String> answer = new ArrayList<>();
         str = str.toLowerCase();
-
+        
         return null;
     }
 }
