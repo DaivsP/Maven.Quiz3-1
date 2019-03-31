@@ -9,16 +9,18 @@ import java.util.List;
 public class PigLatinGenerator {
     public String translate(String str) {
         String[] split = str.split(" ");
-        String answer = "";
+        StringBuilder sb = new StringBuilder();
         for (String string: split) {
             if (VowelUtils.startsWithVowel(string)){
-                answer += singleWordStartsWithVowel(str);
+                sb.append(singleWordStartsWithVowel(string))
+                .append(" ");
             }
             else if (!VowelUtils.startsWithVowel(string)){
-                answer += singleWordDoesNotStartWithVowel(str);
+                sb.append(singleWordDoesNotStartWithVowel(string))
+                .append(" ");
             }
         }
-        return answer;
+        return sb.toString().replaceAll(" $", "");
     }
 
     private String singleWordStartsWithVowel(String str) {

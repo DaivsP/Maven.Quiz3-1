@@ -17,12 +17,13 @@ public class StringUtils {
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        String substring = baseString.substring(indexOfString, indexOfString + 1);
-        String character = characterToCheckFor.toString();
-        if (substring.equals(character)){
-            return true;
-        }
-        return false;
+//        String substring = baseString.substring(indexOfString, indexOfString + 1);
+////        String character = characterToCheckFor.toString();
+////        if (substring.equals(character)){
+////            return true;
+////        }
+////        return false;
+        return characterToCheckFor.equals(baseString.charAt(indexOfString));
     }
 
     public static String[] getAllSubStrings(String string) {
@@ -36,13 +37,14 @@ public class StringUtils {
     }
 
     public static Integer getNumberOfSubStrings(String input){
-        Integer counter = 0;
-        Set<String> answer = new HashSet<>();
-        for (int i = 0; i < input.length(); i++) {
-            for (int j = i + 1; j <= input.length(); j++) {
-                answer.add(input.substring(i, j));
-            }
-        }
-        return answer.size();
+//        Integer counter = 0;
+//        Set<String> answer = new HashSet<>();
+//        for (int i = 0; i < input.length(); i++) {
+//            for (int j = i + 1; j <= input.length(); j++) {
+//                answer.add(input.substring(i, j));
+//            }
+//        }
+//        return answer.size();
+        return getAllSubStrings(input).length;
     }
 }
